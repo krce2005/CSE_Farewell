@@ -19,11 +19,15 @@
     * {
       margin: 0;
       padding: 0;
+     
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
 
     body {
+        overflow-x: scroll; /* enable horizontal scroll */
+      overflow-y: hidden; /* disable vertical scroll */
+      white-space: nowrap;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;

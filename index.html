@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Batch 2021–2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+    --primary: #000000;
+    --accent: #3D0000;
+    --highlight: #FF0000;
+    --text: #FFFFFF;
+    --bg: #000000;
+    --overlay: rgba(0, 0, 0, 0.8);
+    --card-bg: #1a1a1a;
+  }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      gap: 40px;
+      min-height: 100vh;
+      padding: 80px 20px;
+      text-align: left;
+    }
+
+    .video-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+    h1, h2 {
+      color:var(--highlight);
+    }
+
+    p {
+      color: #ffffff;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+    .memories-scattered {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.memories-left {
+  flex: 1;
+  position: relative;
+  height: 350px;
+  min-width: 300px;
+}
+
+.photo-stack {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin: auto;
+}
+
+.photo {
+  position: absolute;
+  width: 300px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.photo1 {
+  top: 20px;
+  left: 30px;
+  transform: rotate(-12deg);
+}
+.photo2 {
+  top: 60px;
+  left: 80px;
+  transform: rotate(8deg);
+}
+.photo3 {
+  top: 100px;
+  left: 10px;
+  transform: rotate(4deg);
+}
+.photo4 {
+  top: 40px;
+  left: 120px;
+  transform: rotate(-6deg);
+}
+.photo5 {
+  top: 80px;
+  left: 60px;
+  transform: rotate(15deg);
+}
+
+.memories-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.memories-right h2 {
+  font-size: 32px;
+  color: var(--highlight);
+  margin-bottom: 16px;
+}
+
+.memories-right p {
+  font-size: 18px;
+  color: #ffffffcc;
+  line-height: 1.6;
+}
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      text-decoration: none;
+      background-color:white;
+      color: var(--primary);
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--highlight);
+    }
+
+    .teacher-message {
+      margin-left: 120px;
+      margin-right: 120px;
+      margin-bottom: 30px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 80px 20px;
+      border-radius: 20px;
+    }
+
+    .teacher-message::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:#1414216b;
+      border-radius: 20px;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 30px;
+      border-radius: 12px;
+    }
+
+    .message-content h2 {
+      font-size: 2.6rem;
+    }
+
+    .message-content p {
+      font-size: 1.2rem;
+    }
+
+    .thankyou {
+      background-color:rgba(172, 5, 5, 0.577);
+      padding: 60px 20px;
+      border-radius: 20px;
+    }
+
+    .thankyou h2 {
+      font-size: 2.5rem;
+    }
+
+    .thankyou p {
+
+      color:white;
+    }
+
+    .av-section {
+      background: #141421;
+    }
+
+    .av-section h2 {
+      font-size: 2.4rem;
+    }
+
+    .av-section video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: var(--card-bg);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+
+      .message-content h2 {
+        font-size: 2rem;
+      }
+
+      .message-content p {
+        font-size: 1rem;
+      }
+
+      .teacher-message {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section hero">
+    <div class="video-wrapper">
+      <video autoplay muted loop>
+        <source src="asset/video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero-text">
+      <h1>Celebrating Our Journey Together</h1>
+      <p>From the first hello to lasting memories, this journey has shaped who we are. Let’s revisit the moments that made us smile, grow, and connect forever.</p>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop>
+        <source src="asset/video1.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- Summary Section -->
+  <section class="section" style="background-color: var(--card-bg); color: #eaeaea; text-align: center;">
+    <h2 style="color: var(--highlight); margin-bottom: 20px;">A Journey to Remember</h2>
+    <p style="max-width: 850px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+      Through years filled with learning, friendships, and transformation, we created memories that will last a lifetime. This page is a tribute to the unity, laughter, and spirit that defined our time together. Let’s keep these moments alive in our hearts and carry them forward with pride.
+    </p>
+  </section>
+
+  <section class="memories-scattered">
+    <div class="memories-left">
+      <div class="photo-stack">
+        <img src="asset/img2.jpg" class="photo photo2" />
+        <img src="asset/akkas2.jpg" class="photo photo3" />
+        <img src="asset/akkas3.jpg" class="photo photo4" />
+        <img src="asset/akkas4.jpg" class="photo photo5" />
+        <img src="asset/img1.jpg" class="photo photo1" />
+
+      </div>
+    </div>
+    <div class="memories-right">
+      <h2>Memories</h2>
+      <p>
+        Moments that made us laugh, cry, and grow—each photo is a frozen frame of joy we shared. They overlap just like our lives did, creating a beautiful collage of unforgettable times.
+      </p>
+      <a class="btn" href="farewellGallery.html">Explore More Memories</a>
+
+    </div>
+
+  </section>
+  
+  
+
+
+  <!-- Guiding Voices -->
+  <section class="teacher-message" style="background-image: url('asset/img1.jpg');">
+    <div class="overlay">
+      <div class="message-content">
+        <h2>Words from Your Teacher</h2>
+        <p>Witnessing your growth has been an incredible experience. Continue to strive, inspire, and reach new heights. The journey never truly ends—it evolves.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="teacher-message" style="background-image: url('asset/img2.jpg');">
+    <div class="overlay">
+      <div class="message-content">
+        <h2>A Message from Your Mentor</h2>
+        <p>Life is a canvas—paint it with bold choices and kind actions. May your path ahead be as meaningful as the memories we created together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You Section -->        
+  <section class="section thankyou">
+    <h2>With Gratitude in Every Step</h2>
+    <p>Thank you for being part of this unforgettable journey. Each moment, each friendship, and every shared smile made this time truly special.</p>
+  </section>
+
+  <!-- AV Section -->
+  <section class="section av-section">
+    <h2>AV Presentation: Through the Lens of Time</h2>
+    <video controls>
+      <source src="asset/Untitled video - Made with Clipchamp.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Designed & Developed with ❤️ by Roobis<br/>
+    Celebrating Batch 2021–2025 | All rights reserved ©
+  </footer>
+
+
+</body>
+</html>
